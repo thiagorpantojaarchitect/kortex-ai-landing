@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Kortex AI — Plataforma SaaS de IA Autônoma</title><meta name="description" content="Orquestre agentes de IA autônomos em escala empresarial com latência ultra-baixa, raciocínio em múltiplos passos e segurança corporativa auditada."/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><link rel="stylesheet" href="/src/styles/main.css"/></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-fixed min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md shadow-[0_8px_32px_0_rgba(0,0,0,0.45)]"><div class="h-20 w-full px-margin flex items-center justify-between"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm group" data-path="recursos" href="#"><img alt="Kortex AI Icon Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WVi_FqKxP8s6BBbQxk9H2oVOEFpwWnziIxbTTdyo3ikwvEU-33BfLdUNsz1qjKf-7kjBvkdobYiVRXAWFWVTOdafcvXg7ad5KUoG3rX8YpsJTF3xNxmLE5mB8LroiIg60NY3kZPGsKd8iN0KzlhYGM9P8A4Mgosa5a-FWbOnU-_CsUyYAguxfq6hvoq3bZ75X4jJGO5dZSJoddRATe42igmlvRCq8ZdD9f4bd2-GddS3c6lXjzaVwAuv8"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight group-hover:text-primary transition-colors">Kortex AI</span></a><div class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high shadow-[0_0_12px_rgba(0,240,255,0.2)]"><span class="h-1.5 w-1.5 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#00F0FF]"></span><span class="font-label-telemetry text-label-telemetry uppercase tracking-wider text-primary-fixed">v2.4 Live</span></div></div><nav class="hidden md:flex items-center gap-space-xs p-1 rounded-full bg-surface-container-low" data-active-classes="bg-surface-container text-primary font-medium rounded-full"><a aria-current="page" class="px-space-md py-1.5 transition-all bg-surface-container text-primary font-medium rounded-full" data-path="recursos" href="#">Recursos</a><a class="px-space-md py-1.5 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="modelos" href="#">Modelos</a><a class="px-space-md py-1.5 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="arquitetura" href="#">Arquitetura</a><a class="px-space-md py-1.5 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="precos" href="#">Preços</a><a class="px-space-md py-1.5 rounded-full font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="docs" href="#">Docs</a></nav><div class="flex items-center gap-space-md"><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors hidden sm:block" data-path="entrar" href="#">Entrar</a><a class="relative inline-flex items-center justify-center px-space-md py-2 rounded-full font-body-sm text-body-sm font-semibold bg-primary-container text-on-primary-fixed hover:bg-primary-fixed transition-all duration-300 shadow-[0_0_20px_rgba(0,240,255,0.35)] hover:shadow-[0_0_28px_rgba(0,240,255,0.6)] group overflow-hidden" data-path="workspace" href="#"><span class="relative z-10 flex items-center gap-1.5">Iniciar Teste Grátis<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span></span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background flex-1"><div class="flex flex-col w-full selection:bg-primary-container selection:text-on-primary-fixed">
+<!-- HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface-container-lowest pt-12 pb-24 lg:pt-20 lg:pb-32">
+<!-- WebGL Shader Interactive Canvas Background -->
+<!-- STITCH_SHADER_START:ANIMATION_2 class="absolute inset-0 w-full h-[680px] pointer-events-none opacity-85" -->
+<div class="absolute inset-0 w-full h-[680px] pointer-events-none opacity-85" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%"></canvas>
+
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_2 -->
+<!-- Ambient Radial Glow Overlay -->
+<div class="absolute inset-0 bg-radial from-transparent via-surface-container-lowest/60 to-surface-container-lowest pointer-events-none"></div>
+<div class="relative max-w-7xl mx-auto px-margin flex flex-col items-center text-center z-10">
+<!-- Announce Pill Badge -->
+<div class="inline-flex items-center gap-space-sm px-4 py-1.5 rounded-full bg-surface-container-high/80 backdrop-blur-md shadow-lg shadow-primary-container/10 mb-8 transition-transform hover:scale-105 cursor-pointer">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-container opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary-container"></span>
+</span>
+<span class="font-label-telemetry text-label-telemetry uppercase tracking-wider text-primary">⚡ Kortex 2.4 com Neural Reasoning Engine lançado</span>
+<span class="material-symbols-outlined text-[16px] text-primary-fixed">arrow_forward</span>
+</div>
+<!-- Main Punchy Headline -->
+<h1 class="font-display-hero text-display-hero-mobile lg:text-display-hero max-w-5xl tracking-tight text-on-surface mb-6">
+        Orquestre Agentes de IA Autônomos em <span class="bg-gradient-to-r from-on-surface via-primary to-primary-container bg-clip-text text-transparent">Escala Empresarial</span>
+</h1>
+<!-- Subtitle -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mb-10 leading-relaxed">
+        Construa, implante e monitore fluxos de trabalho inteligentes com latência ultra-baixa, raciocínio em múltiplos passos e segurança corporativa auditada. Reduza seus custos de inferência em até 68%.
+      </p>
+<!-- Action Group CTAs -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md w-full sm:w-auto mb-16">
+<a class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-primary-container via-surface-tint to-primary-fixed text-on-primary-fixed font-title-md text-title-md font-semibold transition-all duration-300 shadow-lg shadow-primary-container/30 hover:shadow-primary-container/60 hover:scale-[1.02] flex items-center justify-center gap-2 group" href="#playground">
+          Começar Agora Gratuitamente
+          <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">bolt</span>
+</a>
+<a class="w-full sm:w-auto px-8 py-4 rounded-full bg-surface-container-high/60 hover:bg-surface-container-high backdrop-blur-md text-on-surface font-title-md text-title-md font-medium transition-all duration-300 shadow-md flex items-center justify-center gap-2 hover:text-primary" href="#demo">
+<span class="material-symbols-outlined text-[20px] text-primary">play_circle</span>
+          Agendar Demo Técnica
+        </a>
+</div>
+<!-- Social Proof Bar -->
+<div class="flex flex-col items-center gap-4 w-full pt-8">
+<span class="font-label-telemetry text-label-telemetry uppercase tracking-widest text-outline">Confiado por +4.800 equipes de engenharia em todo o mundo</span>
+<div class="flex flex-wrap items-center justify-center gap-8 md:gap-14 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface tracking-tighter">
+<span class="material-symbols-outlined text-[22px] text-primary">change_history</span>▲ VERCEL
+          </div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">
+<span class="material-symbols-outlined text-[22px] text-secondary">deployed_code</span>SCALE
+          </div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface tracking-wide">
+<span class="material-symbols-outlined text-[22px] text-tertiary-fixed">adjust</span>LINEAR
+          </div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">
+<span class="material-symbols-outlined text-[22px] text-primary">monitoring</span>DATADOG
+          </div>
+<div class="flex items-center gap-2 font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight">
+<span class="material-symbols-outlined text-[22px] text-tertiary">bolt</span>SUPABASE
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE PLAYGROUND / LIVE SIMULATOR -->
+<section class="relative w-full py-20 bg-surface-dim" id="playground">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-[20px]">terminal</span>
+<span class="font-label-telemetry text-label-telemetry text-primary uppercase tracking-widest">Console Interativo ao Vivo</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Simulador de Raciocínio Neurônico</h2>
+</div>
+<!-- Workflow Presets Tab Selector -->
+<div class="flex items-center gap-1.5 p-1 rounded-full bg-surface-container-lowest shadow-inner" id="workflow-tabs">
+<button class="workflow-btn px-4 py-2 rounded-full font-body-sm text-body-sm font-medium bg-primary-container text-on-primary-fixed transition-all" id="tab-finance" onclick="switchWorkflow('finance')">
+            Análise Financeira
+          </button>
+<button class="workflow-btn px-4 py-2 rounded-full font-body-sm text-body-sm font-medium text-on-surface-variant hover:text-on-surface transition-all" id="tab-refactor" onclick="switchWorkflow('refactor')">
+            Refatoração de Código
+          </button>
+<button class="workflow-btn px-4 py-2 rounded-full font-body-sm text-body-sm font-medium text-on-surface-variant hover:text-on-surface transition-all" id="tab-security" onclick="switchWorkflow('security')">
+            Auditoria de Falhas
+          </button>
+</div>
+</div>
+<!-- Main Glassmorphism Console Card -->
+<div class="w-full rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-2xl shadow-primary-container/5 overflow-hidden">
+<!-- Top Toolbar Telemetry Bar -->
+<div class="px-6 py-3.5 bg-surface-container-low flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2">
+<div class="flex gap-1.5">
+<span class="w-3 h-3 rounded-full bg-error/70 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-secondary/50 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary-fixed/70 inline-block"></span>
+</div>
+<span class="font-label-telemetry text-label-telemetry text-on-surface-variant ml-3">pipeline://orchestrator-cluster-us-east.kortex.internal</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed">speed</span>
+<span class="font-label-telemetry text-label-telemetry text-tertiary-fixed" id="telemetry-speed">142 tokens/sec</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary">timer</span>
+<span class="font-label-telemetry text-label-telemetry text-primary" id="telemetry-lat">Latência: 18ms</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-telemetry text-label-telemetry text-secondary">Acurácia: 99.8%</span>
+</div>
+</div>
+</div>
+<!-- Split View: Pipeline Visualizer & Execution Stream -->
+<div class="grid grid-cols-1 lg:grid-cols-12 min-h-[460px]">
+<!-- Left Column: Multi-Agent Flow Diagram -->
+<div class="lg:col-span-5 p-6 bg-surface-container-low/40 flex flex-col justify-between">
+<div class="space-y-4">
+<span class="font-label-code text-label-code uppercase tracking-wider text-outline">Sequência de Execução Neuronal Ativa</span>
+<!-- Agent Node 1 -->
+<div class="p-4 rounded-xl bg-surface-container transition-all hover:bg-surface-container-high relative group">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary">database</span>
+<span class="font-title-md text-title-md font-semibold text-on-surface" id="agent-1-title">Data Ingestion Agent</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-telemetry text-label-telemetry bg-tertiary/10 text-tertiary-fixed flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-tertiary-fixed"></span> CONCLUÍDO
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="agent-1-desc">Extração vetorizada de bases OLAP e feeds contínuos em 4 streams simultâneos.</p>
+</div>
+<div class="flex justify-center -my-2">
+<span class="material-symbols-outlined text-primary-container text-[20px] animate-bounce">south</span>
+</div>
+<!-- Agent Node 2 -->
+<div class="p-4 rounded-xl bg-surface-container-high transition-all shadow-md shadow-primary-container/10 relative">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed animate-spin">sync</span>
+<span class="font-title-md text-title-md font-semibold text-primary" id="agent-2-title">Vector Reasoning Engine</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-telemetry text-label-telemetry bg-primary-container/20 text-primary-fixed flex items-center gap-1">
+<span class="h-1.5 w-1.5 rounded-full bg-primary-container animate-ping"></span> PROCESSANDO
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="agent-2-desc">Raciocínio lógico por cadeias de pensamento adaptativas com auto-correção.</p>
+</div>
+<div class="flex justify-center -my-2">
+<span class="material-symbols-outlined text-outline text-[20px]">south</span>
+</div>
+<!-- Agent Node 3 -->
+<div class="p-4 rounded-xl bg-surface-container transition-all hover:bg-surface-container-high opacity-85">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">code_blocks</span>
+<span class="font-title-md text-title-md font-semibold text-on-surface" id="agent-3-title">Synthesis &amp; Audit Sandbox</span>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-telemetry text-label-telemetry bg-surface-container-highest text-on-surface-variant">EM ESPERA</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="agent-3-desc">Verificação estática de conformidade e testes em contêiner efêmero com isolamento gVisor.</p>
+</div>
+</div>
+<div class="pt-6 flex items-center justify-between">
+<span class="font-label-telemetry text-label-telemetry text-outline">LLM Backbone: DeepSeek-V3 + Claude-3.5-Sonnet</span>
+<button class="px-4 py-2 rounded-lg bg-surface-container-high hover:bg-primary-container hover:text-on-primary-fixed text-primary font-body-sm text-body-sm font-semibold transition-colors flex items-center gap-1.5" onclick="triggerSimulateRun()">
+<span class="material-symbols-outlined text-[16px]">replay</span> Recalcular
+              </button>
+</div>
+</div>
+<!-- Right Column: Live Code / Stream Execution Console -->
+<div class="lg:col-span-7 p-6 bg-surface-container-lowest flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 mb-4">
+<span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+<span class="h-2 w-2 rounded-full bg-primary-container"></span> Output de Execução em Tempo Real
+                </span>
+<span class="font-label-telemetry text-label-telemetry text-tertiary-fixed">Hash: 0x8F92A...4B</span>
+</div>
+<!-- Monospace Code Screen -->
+<pre class="w-full p-4 rounded-xl bg-surface-dim font-label-code text-label-code text-on-surface leading-relaxed overflow-x-auto selection:bg-secondary-container"><code id="stream-code-output"><span class="text-outline">// Inicializando Orquestrador Kortex Neural Mesh</span>
+<span class="text-primary">import</span> { Orchestrator, ConsensusEngine } <span class="text-primary">from</span> <span class="text-tertiary-fixed">'@kortex/mesh'</span>;
+
+<span class="text-on-surface-variant">const</span> pipeline = <span class="text-primary">new</span> Orchestrator({
+  strategy: <span class="text-tertiary-fixed">'multi-agent-speculative'</span>,
+  timeoutMs: <span class="text-secondary">420</span>,
+  securityEnclave: <span class="text-primary">true</span>
+});
+
+<span class="text-outline">// Evento: Análise de Fluxos e Projeção Concluída</span>
+<span class="text-tertiary-fixed">[2025-02-18 10:44:02.112]</span> Agente: <span class="text-primary-fixed">Vector Reasoning</span> validou 89 nós causais.
+<span class="text-secondary-fixed">Resultado:</span> Rentabilidade calculada com desvio padrão &lt; 0.04%.
+<span class="text-primary">[SUCCESS]</span> Assinatura criptográfica SHA-256 gerada com sucesso.</code></pre>
+</div>
+<div class="mt-6 pt-4 flex flex-wrap items-center justify-between gap-4 bg-surface-container/60 p-4 rounded-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">memory</span>
+<div>
+<div class="font-title-md text-title-md font-semibold text-on-surface">Agente de Decisão Autônoma</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Nenhum dado é compartilhado para treinamento de terceiros.</div>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-primary-fixed font-label-telemetry text-label-telemetry">
+                100% ISOLADO
+              </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BENTO GRID CAPABILITIES -->
+<section class="w-full py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="font-label-telemetry text-label-telemetry uppercase tracking-widest text-primary">Arquitetura de Próxima Geração</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-4">Construído para Engenheiros que Demandam Precisão Absoluta</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Elimine scripts frágeis e transições com falha. Nossa malha neural coordena agentes com sincronia matemática e resiliência a falhas de rede.</p>
+</div>
+<!-- Bento 4-Card Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Bento Card 1: Large Multi-Agent Real-Time Reasoning -->
+<div class="md:col-span-8 rounded-3xl bg-surface-container p-8 lg:p-10 flex flex-col justify-between shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-surface-container-high">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="p-3 rounded-2xl bg-primary-container/10 text-primary-fixed">
+<span class="material-symbols-outlined text-[32px]">hub</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-high font-label-telemetry text-label-telemetry text-primary">
+                DYNAMIC GRAPH MESH
+              </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Raciocínio Multi-Agente em Tempo Real</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-8">
+              Distribuição paralela de subtarefas através de grafos direcionados acíclicos (DAG). Se um agente hesita ou encontra inconsistências lógicas, o orquestrador aciona especialistas concorrentes para atingir consenso em milissegundos.
+            </p>
+</div>
+<!-- Inline Visual Data Chart: Agent Latency Distribution -->
+<div class="p-6 rounded-2xl bg-surface-container-low/70 flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label-code text-label-code text-on-surface">Benchmark de Consenso Distribuído</span>
+<span class="font-label-telemetry text-label-telemetry text-tertiary-fixed">-42% tempo de convergência</span>
+</div>
+<div class="space-y-2">
+<div>
+<div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant mb-1">
+<span>Kortex Neural Graph (4 agentes)</span>
+<span class="font-label-telemetry text-label-telemetry text-primary font-semibold">18 ms</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-primary-container rounded-full w-[18%] transition-all duration-1000"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant mb-1">
+<span>Pipelines Lineares Tradicionais (LangChain/LlamaIndex)</span>
+<span class="font-label-telemetry text-label-telemetry text-outline">164 ms</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-outline rounded-full w-[85%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Card 2: Zero-Leakage Shield -->
+<div class="md:col-span-4 rounded-3xl bg-surface-container p-8 flex flex-col justify-between shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-surface-container-high">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="p-3 rounded-2xl bg-tertiary-container/10 text-tertiary-fixed">
+<span class="material-symbols-outlined text-[32px]">verified_user</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-high font-label-telemetry text-label-telemetry text-tertiary-fixed">
+                ZERO-TRUST
+              </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Enterprise Shield</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Isolamento criptográfico E2E de prompts e vetores com execução restrita em enclaves de computação confidencial (AWS Nitro / GCP Confidential Space).
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-3 rounded-xl bg-surface-container-low text-center">
+<span class="font-title-lg text-title-lg font-bold text-on-surface block">SOC2 Type II</span>
+<span class="font-body-sm text-body-sm text-tertiary-fixed">Auditado Anual</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low text-center">
+<span class="font-title-lg text-title-lg font-bold text-on-surface block">HIPAA</span>
+<span class="font-body-sm text-body-sm text-tertiary-fixed">Pronto p/ Saúde</span>
+</div>
+</div>
+</div>
+<!-- Bento Card 3: Universal Connectors -->
+<div class="md:col-span-5 rounded-3xl bg-surface-container p-8 flex flex-col justify-between shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-surface-container-high">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="p-3 rounded-2xl bg-secondary-container/20 text-secondary">
+<span class="material-symbols-outlined text-[32px]">extension</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-high font-label-telemetry text-label-telemetry text-secondary">
+                PLUG &amp; PLAY
+              </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Conectores Nativos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+              Integração instantânea com seus data warehouses, repositórios e barramentos de mensageria com autenticação mTLS e OAuth2 federado.
+            </p>
+</div>
+<!-- Connector Tag Matrix -->
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low font-label-telemetry text-label-telemetry text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">storage</span> PostgreSQL
+            </span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low font-label-telemetry text-label-telemetry text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-surface-tint">ac_unit</span> Snowflake
+            </span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low font-label-telemetry text-label-telemetry text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-on-surface">terminal</span> GitHub Enterprise
+            </span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low font-label-telemetry text-label-telemetry text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">chat</span> Slack
+            </span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low font-label-telemetry text-label-telemetry text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">cloud</span> AWS S3 &amp; Bedrock
+            </span>
+<span class="px-3 py-1.5 rounded-lg bg-surface-container-low font-label-telemetry text-label-telemetry text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">dns</span> Kubernetes CRDs
+            </span>
+</div>
+</div>
+<!-- Bento Card 4: Dynamic Token Cost Optimization -->
+<div class="md:col-span-7 rounded-3xl bg-surface-container p-8 lg:p-10 flex flex-col justify-between shadow-xl transition-all duration-300 hover:shadow-2xl hover:bg-surface-container-high">
+<div>
+<div class="flex items-center justify-between mb-6">
+<div class="p-3 rounded-2xl bg-primary-container/10 text-primary-fixed">
+<span class="material-symbols-outlined text-[32px]">savings</span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-high font-label-telemetry text-label-telemetry text-primary">
+                ECONOMIA DE ATÉ 68%
+              </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Roteamento Adaptativo por Token</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">
+              Nem toda instrução requer um modelo de 400 bilhões de parâmetros. Nosso Classificador Semântico Heurístico despacha tarefas simples para SLMs locais (ex: Mistral 7B / Llama 3.3 8B) e reserva clusters frontier apenas para sintaxes complexas.
+            </p>
+</div>
+<div class="grid grid-cols-3 gap-4 pt-4">
+<div class="p-4 rounded-xl bg-surface-container-low">
+<span class="font-headline-md text-headline-md font-bold text-primary block">68%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Economia Mensal</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low">
+<span class="font-headline-md text-headline-md font-bold text-tertiary-fixed block">4.2x</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Throughput Efetivo</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low">
+<span class="font-headline-md text-headline-md font-bold text-secondary block">0%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Perda de Qualidade</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PERFORMANCE METRICS & BENCHMARKS -->
+<section class="w-full py-24 bg-surface-dim">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="p-10 lg:p-16 rounded-3xl bg-surface-container-low/90 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-12">
+<div class="lg:w-1/2 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-telemetry text-label-telemetry">
+<span class="material-symbols-outlined text-[16px]">speed</span> BENCHMARK AUDITADO
+          </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Kortex Neural Engine vs. Arquiteturas Antigas</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Em testes rigorosos executando o HumanEval-X e tarefas multi-hop de reasoning empresarial, o Kortex superou soluções legadas em velocidade de resposta e resiliência orçamentária.
+          </p>
+<div class="space-y-4 pt-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-[24px]">check_circle</span>
+<span class="font-title-md text-title-md text-on-surface">Prevenção nativa contra loops infinitos de agentes com circuit breakers de token</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-[24px]">check_circle</span>
+<span class="font-title-md text-title-md text-on-surface">Cache semântico de embeddings com tempo de consulta sub-milissegundo</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-[24px]">check_circle</span>
+<span class="font-title-md text-title-md text-on-surface">Controle de concorrência com consistência eventual validada em Raft</span>
+</div>
+</div>
+</div>
+<div class="lg:w-1/2 w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary text-[32px] mb-4">bolt</span>
+<div>
+<span class="font-display-hero text-headline-lg lg:text-display-hero text-primary font-bold tracking-tight block">8.4x</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Mais Rápido na Resolução</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Conclusão de tarefas de múltiplos passos em comparação com pipelines sequenciais.</p>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col justify-between">
+<span class="material-symbols-outlined text-tertiary-fixed text-[32px] mb-4">memory</span>
+<div>
+<span class="font-display-hero text-headline-lg lg:text-display-hero text-tertiary-fixed font-bold tracking-tight block">-64%</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Consumo de VRAM</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Algoritmos de quantização dinâmica sob demanda PagedAttention.</p>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container shadow-md flex flex-col justify-between sm:col-span-2">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-secondary text-[32px]">verified</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-telemetry text-label-telemetry">SLA CONTRATUAL</span>
+</div>
+<div>
+<span class="font-display-hero text-headline-lg lg:text-display-hero text-on-surface font-bold tracking-tight block">99.99%</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Garantia de Uptime Global</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Arquitetura multi-região distribuída em 14 zonas edge com failover automático sem interrupção de conexões.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- PRICING TIERS SECTION -->
+<section class="w-full py-24 bg-surface-container-lowest" id="pricing">
+<div class="max-w-7xl mx-auto px-margin">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<span class="font-label-telemetry text-label-telemetry uppercase tracking-widest text-primary">Preços Transparentes</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-4">Escale com Segurança e Previsibilidade</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Comece a construir hoje gratuitamente no nosso sandbox e migre para planos dedicados conforme seus fluxos crescem.</p>
+<!-- Pricing Toggle Period -->
+<div class="flex items-center justify-center gap-4 mt-8">
+<span class="font-body-md text-body-md text-on-surface-variant" id="billing-label-monthly">Mensal</span>
+<button class="w-14 h-7 rounded-full bg-surface-container-high p-1 flex items-center transition-colors" id="billing-toggle-btn" onclick="toggleBilling()">
+<div class="w-5 h-5 rounded-full bg-primary shadow-md transform transition-transform" id="billing-toggle-knob"></div>
+</button>
+<span class="font-body-md text-body-md text-on-surface font-semibold flex items-center gap-1.5" id="billing-label-annual">
+            Anual <span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary-fixed font-label-telemetry text-label-telemetry">20% OFF</span>
+</span>
+</div>
+</div>
+<!-- Pricing Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-stretch">
+<!-- Tier 1: Starter -->
+<div class="rounded-3xl bg-surface-container p-8 flex flex-col justify-between shadow-lg">
+<div>
+<span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-wider">Desenvolvedor</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1 mb-4">Starter</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="font-display-hero text-display-hero text-on-surface font-bold">$0</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/para sempre</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Ideal para validação de protótipos de agentes e testes de raciocínio local.</p>
+<div class="space-y-3 pt-4 mb-8">
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                Até 3 agentes autônomos simultâneos
+              </div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                100.000 tokens de raciocínio/mês
+              </div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                Comunidade no Discord &amp; SDKs
+              </div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-outline">
+<span class="material-symbols-outlined text-[18px] text-outline">close</span>
+                SLA de Uptime corporativo
+              </div>
+</div>
+</div>
+<a class="w-full py-3.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-title-md text-title-md font-medium text-center transition-all block" href="#">
+            Começar Grátis
+          </a>
+</div>
+<!-- Tier 2: Pro Team (Highlighted) -->
+<div class="rounded-3xl bg-surface-container-high p-8 flex flex-col justify-between shadow-2xl relative scale-105 z-10 shadow-primary-container/10">
+<div class="absolute -top-3.5 left-1/2 transform -translate-x-1/2">
+<span class="px-4 py-1 rounded-full bg-primary-container text-on-primary-fixed font-label-telemetry text-label-telemetry font-bold uppercase tracking-wider shadow-md">
+              MAIS POPULAR
+            </span>
+</div>
+<div>
+<span class="font-label-code text-label-code text-primary-fixed uppercase tracking-wider">Escalabilidade Rápida</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1 mb-4">Pro Team</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="font-display-hero text-display-hero text-on-surface font-bold" id="price-pro">$89</span>
+<span class="font-body-md text-body-md text-on-surface-variant" id="period-pro">/mês</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Para times de software e produtos digitais que demandam automação contínua.</p>
+<div class="space-y-3 pt-4 mb-8">
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                Agentes e grafos ilimitados
+              </div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                10 milhões de tokens neurais inclusos
+              </div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                Roteamento Dinâmico de Custo (SLM + LLM)
+              </div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                Suporte prioritário com SLA de 4 horas
+              </div>
+</div>
+</div>
+<a class="w-full py-3.5 rounded-full bg-primary-container hover:bg-primary-fixed text-on-primary-fixed font-title-md text-title-md font-semibold text-center transition-all shadow-lg shadow-primary-container/20 block" href="#">
+            Iniciar Teste de 14 Dias
+          </a>
+</div>
+<!-- Tier 3: Enterprise -->
+<div class="rounded-3xl bg-surface-container p-8 flex flex-col justify-between shadow-lg">
+<div>
+<span class="font-label-code text-label-code text-on-surface-variant uppercase tracking-wider">Governança Crítica</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1 mb-4">Enterprise</h3>
+<div class="flex items-baseline gap-1 mb-6">
+<span class="font-display-hero text-headline-lg lg:text-display-hero text-on-surface font-bold">Custom</span>
+<span class="font-body-md text-body-md text-on-surface-variant">/faturamento anual</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Instalações em VPC privada ou on-premise com soberania estrita e auditoria.</p>
+<div class="space-y-3 pt-4 mb-8">
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                Implantação em VPC Dedicada (AWS, GCP, Azure)
+              </div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                99.99% Uptime SLA com indenização contratual
+              </div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                Gerente Técnico de Contas dedicado
+              </div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">check</span>
+                Auditorias customizadas de cibersegurança
+              </div>
+</div>
+</div>
+<a class="w-full py-3.5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-title-md text-title-md font-medium text-center transition-all block" href="#">
+            Falar com Vendas
+          </a>
+</div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIALS & FAQ ACCORDION -->
+<section class="w-full py-24 bg-surface-dim">
+<div class="max-w-7xl mx-auto px-margin">
+<!-- Testimonials -->
+<div class="mb-24">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="font-label-telemetry text-label-telemetry uppercase tracking-widest text-primary">Testemunhos de Produção</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mt-2">O que Dizem Líderes de Engenharia</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-8 rounded-3xl bg-surface-container-low shadow-lg flex flex-col justify-between">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed mb-6 italic">
+              "Reduzimos nosso tempo de triagem de incidentes de segurança de 45 minutos para apenas 12 segundos com os agentes autônomos do Kortex. A rastreabilidade de decisões é impecável."
+            </p>
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Headshot of a male engineering executive in modern dark tech apparel smiling against dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwSxaQvJAmZ1YTmuPxHiU6M65TTCv3ygipTrhl4CF4RtGz84N24qxmGIHwo_PwBAFGzPyN10uiCypNW5eDcfwsdwISybtumy6_vQ0I4mDQ2ARmTVre98Co-C3v_CvIrm_kT_uok52kMYeyatt22jyS_1bYdqcQQUPoYqQnXjrwSg60Rly9dRa3aMQ_CwkvobEJM4QorntmOcstSwJHO_pD2O1-1gPVwqoO994GgzxQ7n7A3ywpTSOYQg"/>
+<div>
+<span class="font-title-md text-title-md font-semibold text-on-surface block">Eduardo Valença</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">CTO @ FinScale Cloud</span>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-3xl bg-surface-container-low shadow-lg flex flex-col justify-between">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed mb-6 italic">
+              "O recurso de roteamento adaptativo de tokens cortou nossa fatura mensal com provedores de IA em quase 60%. O Kortex é indispensável para nossa esteira de software."
+            </p>
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Headshot of a female principal AI architect with glasses and modern tech aesthetic studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDakvpticrm9U3HVwUUnB7WpmAwffpgRvD_rovSOrM89P-WhtClSJJ6ScLjgXmjOPnOht8x4D52nW6yAU9cpzoP1RJ1L4GvoZzAJcfhh28pzWf8mTSzhxjqXMQume4Wy-Dmc_rtglzwjMBqx3xM3CmSM6hbpOEmp04x6hwIEMvvAvX-OtkG46E_tixzb6i4yEoFYBeC_vHV9KSixdgOzEWhC9Yg5QL2YFh-fZ_ZfrfB-4KbMExri12BJw"/>
+<div>
+<span class="font-title-md text-title-md font-semibold text-on-surface block">Dra. Beatriz Mendes</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Head de IA @ Nexus Data</span>
+</div>
+</div>
+</div>
+<div class="p-8 rounded-3xl bg-surface-container-low shadow-lg flex flex-col justify-between">
+<p class="font-body-md text-body-md text-on-surface leading-relaxed mb-6 italic">
+              "Integrar nossos clusters Kubernetes com as ferramentas de auditoria e validação levou uma única tarde. A conformidade com SOC2 nos permitiu fechar contas Enterprise."
+            </p>
+<div class="flex items-center gap-3">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm" data-alt="Professional portrait of a male VP of engineering in minimalist modern office with ambient cyan light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmLUF7-mIxCJrbPqsUdpYADZpQyxdPWuIcYs60UXc4rndfNTwnw4zFa9pg3lHzNu4OMHfoBhr2ZK6cUcCJlcetd_dPXMQLaE3npt5RNeN7Nx5i3DyUOUjPkRmcilkl1dwNgRt2dfeuavLsrIoDK1jQGHGUEYbqtWsci1yoj2AA5vItojLM7v39H-ms2Yyzn_l9ojlQo7GVbfqTkCYufvk_SnTGBD-MDtYDDh9E1jePTUez3qvIw-lRCg"/>
+<div>
+<span class="font-title-md text-title-md font-semibold text-on-surface block">Guilherme Siqueira</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">VP de Engenharia @ LogiMesh</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FAQ Accordion -->
+<div class="max-w-3xl mx-auto">
+<div class="text-center mb-10">
+<span class="font-label-telemetry text-label-telemetry uppercase tracking-widest text-primary">Dúvidas Frequentes</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-2">Perguntas Técnicas &amp; Arquiteturais</h2>
+</div>
+<div class="space-y-4">
+<!-- FAQ 1 -->
+<div class="rounded-2xl bg-surface-container-low overflow-hidden transition-colors">
+<button class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-title-lg text-title-lg text-on-surface font-semibold hover:text-primary transition-colors" onclick="toggleFaq(1)">
+<span>Como o Kortex garante que meus dados corporativos não vazem?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform" id="faq-icon-1">expand_more</span>
+</button>
+<div class="hidden px-6 pb-5 font-body-md text-body-md text-on-surface-variant leading-relaxed" id="faq-content-1">
+              Todos os fluxos são executados em contêineres efêmeros isolados com microVMs (Firecracker). Não retemos logs de contexto nem enviamos dados para re-treinamento de LLMs terceiras. Mantemos acordos estritos de Zero Data Retention (ZDR) e conformidade SOC2 Type II.
+            </div>
+</div>
+<!-- FAQ 2 -->
+<div class="rounded-2xl bg-surface-container-low overflow-hidden transition-colors">
+<button class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-title-lg text-title-lg text-on-surface font-semibold hover:text-primary transition-colors" onclick="toggleFaq(2)">
+<span>Posso usar modelos locais ou meus próprios checkpoints de LLM?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform" id="faq-icon-2">expand_more</span>
+</button>
+<div class="hidden px-6 pb-5 font-body-md text-body-md text-on-surface-variant leading-relaxed" id="faq-content-2">
+              Sim. Além de oferecer suporte imediato a provedores gerenciados (OpenAI, Anthropic, Google Vertex), você pode conectar instâncias vLLM locais, Ollama ou endpoints HuggingFace TGI apontando sua URL e credencial de acesso mTLS.
+            </div>
+</div>
+<!-- FAQ 3 -->
+<div class="rounded-2xl bg-surface-container-low overflow-hidden transition-colors">
+<button class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-title-lg text-title-lg text-on-surface font-semibold hover:text-primary transition-colors" onclick="toggleFaq(3)">
+<span>Qual a latência típica para raciocínios com mais de 5 agentes?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform" id="faq-icon-3">expand_more</span>
+</button>
+<div class="hidden px-6 pb-5 font-body-md text-body-md text-on-surface-variant leading-relaxed" id="faq-content-3">
+              Nosso motor executa em paralelo com topologia de DAG não bloqueante. Em vez de uma cadeia linear lenta, os nós que não possuem dependência de dados mútua rodam concorrentemente. A latência média para validações com 5 agentes varia entre 18ms e 65ms (dependendo da profundidade dos tokens sintetizados).
+            </div>
+</div>
+<!-- FAQ 4 -->
+<div class="rounded-2xl bg-surface-container-low overflow-hidden transition-colors">
+<button class="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-title-lg text-title-lg text-on-surface font-semibold hover:text-primary transition-colors" onclick="toggleFaq(4)">
+<span>Como funciona a migração a partir de LangChain ou CrewAI?</span>
+<span class="material-symbols-outlined text-[20px] transition-transform" id="faq-icon-4">expand_more</span>
+</button>
+<div class="hidden px-6 pb-5 font-body-md text-body-md text-on-surface-variant leading-relaxed" id="faq-content-4">
+              Disponibilizamos um SDK adaptador oficial em Python e TypeScript que aceita esquemas de ferramentas existentes (`BaseTool` ou especificações OpenAPI). Em menos de 20 linhas de código você converte pipelines legados para a malha de alta resiliência do Kortex.
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FINAL CALL TO ACTION -->
+<section class="relative w-full py-24 bg-surface-container-lowest overflow-hidden">
+<!-- Directed Ambient Glow -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-[600px] h-[300px] bg-primary-container/15 rounded-full blur-[140px]"></div>
+</div>
+<div class="relative max-w-5xl mx-auto px-margin text-center z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-primary-fixed font-label-telemetry text-label-telemetry mb-6">
+<span class="material-symbols-outlined text-[16px]">rocket_launch</span> IMPLANTE EM MINUTOS
+      </div>
+<h2 class="font-display-hero text-headline-lg lg:text-display-hero text-on-surface font-bold tracking-tight mb-6">
+        Pronto para acelerar sua infraestrutura de Inteligência Artificial?
+      </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+        Junte-se a milhares de times inovadores que operam frotas de agentes sem gargalos, com segurança auditável e menor custo por resposta.
+      </p>
+<!-- Instant Sign-up Input Container -->
+<form class="max-w-md mx-auto flex flex-col sm:flex-row items-center gap-2 p-1.5 rounded-full bg-surface-container-low shadow-2xl" onsubmit="handleSignup(event)">
+<div class="flex items-center gap-2 px-4 py-2 w-full">
+<span class="material-symbols-outlined text-outline text-[20px]">mail</span>
+<input class="w-full bg-transparent font-body-md text-body-md text-on-surface focus:outline-none placeholder:text-outline" placeholder="seu.email@empresa.com" required="" type="email"/>
+</div>
+<button class="w-full sm:w-auto whitespace-nowrap px-6 py-3 rounded-full bg-primary-container hover:bg-primary-fixed text-on-primary-fixed font-title-md text-title-md font-semibold transition-all shadow-md" type="submit">
+          Criar Conta Gratuita
+        </button>
+</form>
+<div class="flex items-center justify-center gap-6 mt-6 font-label-telemetry text-label-telemetry text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed">check</span> Sem cartão de crédito
+        </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed">check</span> 14 dias de Pro grátis
+        </span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed">check</span> Setup em 3 minutos
+        </span>
+</div>
+</div>
+</section>
+</div>
+</main><footer class="w-full bg-surface-container-lowest pt-space-xl pb-space-lg shadow-[0_-8px_32px_0_rgba(0,0,0,0.35)]"><div class="w-full px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Kortex AI Icon Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WVi_FqKxP8s6BBbQxk9H2oVOEFpwWnziIxbTTdyo3ikwvEU-33BfLdUNsz1qjKf-7kjBvkdobYiVRXAWFWVTOdafcvXg7ad5KUoG3rX8YpsJTF3xNxmLE5mB8LroiIg60NY3kZPGsKd8iN0KzlhYGM9P8A4Mgosa5a-FWbOnU-_CsUyYAguxfq6hvoq3bZ75X4jJGO5dZSJoddRATe42igmlvRCq8ZdD9f4bd2-GddS3c6lXjzaVwAuv8"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Kortex AI</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Orquestração autônoma de múltiplos agentes de alta precisão para fluxos de trabalho neurais empresariais em hiperescala.</p><div class="flex flex-wrap items-center gap-space-xs mt-space-xs"><div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high"><span class="material-symbols-outlined text-[16px] text-tertiary-fixed">verified_user</span><span class="font-label-telemetry text-label-telemetry text-on-surface">SOC2 TYPE II</span></div><div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high"><span class="material-symbols-outlined text-[16px] text-tertiary-fixed">gpp_good</span><span class="font-label-telemetry text-label-telemetry text-on-surface">ISO 27001</span></div><div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high"><span class="material-symbols-outlined text-[16px] text-primary-fixed">lock</span><span class="font-label-telemetry text-label-telemetry text-on-surface">E2E ENCRYPTED</span></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-label-code text-label-code uppercase tracking-wider text-primary-fixed">Plataforma</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="recursos" href="#">Agentes Autônomos</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="arquitetura" href="#">Mesh de Grafos Neurais</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="modelos" href="#">Catálogo de Modelos LLM</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="seguranca" href="#">Soberania de Dados</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-code text-label-code uppercase tracking-wider text-primary-fixed">Desenvolvedores</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="docs" href="#">API Reference</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="docs" href="#">SDKs em Python &amp; Go</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="comunidade" href="#">Comunidade Discord</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="codigo-aberto" href="#">GitHub Open Runtime</a></div><div class="flex flex-col gap-space-sm"><span class="font-label-code text-label-code uppercase tracking-wider text-primary-fixed">Ecossistema</span><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5" data-path="status" href="#"><span class="h-2 w-2 rounded-full bg-tertiary-fixed shadow-[0_0_8px_#4edea3]"></span>Status Operacional</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="precos" href="#">Níveis de Licenciamento</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="contato" href="#">Suporte Enterprise 24/7</a><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="privacidade" href="#">Privacidade &amp; Termos</a></div></div><div class="pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm bg-surface-container-low px-space-md py-space-sm rounded-xl"><span class="font-body-sm text-body-sm text-on-surface-variant">© 2025 Kortex AI Inc. Todos os direitos reservados. Orquestração Neural de Próxima Geração.</span><div class="flex items-center gap-space-md"><a class="font-label-telemetry text-label-telemetry text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1" data-path="status" href="#"><span class="material-symbols-outlined text-[14px]">wifi_tethering</span>GLOBAL CLOUD READY</a><span class="font-label-telemetry text-label-telemetry text-on-surface-variant">LATÊNCIA: 14ms</span></div></div></div></footer><script type="module" src="/src/main.js"></script></body></html>

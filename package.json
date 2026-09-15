@@ -1,0 +1,18 @@
+{
+  "name": "kortex-ai-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kortex AI — landing page da plataforma SaaS de IA autônoma (export Google Stitch convertido em projeto Vite + Tailwind CSS)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "vite": "^5.4.10"
+  }
+}
